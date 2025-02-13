@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "github.com/georgethomas111/img-proxy/learn";
+
+package learn;
+
+service Learn {
+  rpc Gossip(GossipRequest) returns (stream Messages);
+};
+
+message GossipRequest {
+  string id = 1;
+};
+
+// The response message containing the greetings
+message Messages {
+  string info = 1;
+};
